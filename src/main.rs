@@ -18,8 +18,8 @@ fn last_language(languages: &[String]) -> &str {
     languages.last().unwrap()
 }
 
-fn longest_language<'a>(lang1: &'a str, lang2: &'a str) -> &'a str {
-    if lang1.len() > lang2.len() { lang1 } else { lang2 }
+fn longest_language<'a>(lang_a: &'a str, lang_b: &'a str) -> &'a str {
+    if lang_a.len() > lang_b.len() { lang_a } else { lang_b }
 }
 
 fn main() {
