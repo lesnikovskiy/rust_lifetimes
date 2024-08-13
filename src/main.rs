@@ -14,25 +14,16 @@ fn next_language<'a>(languages: &'a [String], current: &str) -> &'a str {
     languages.last().unwrap()
 }
 
-fn find_keyboard<'a>(keyboards: &'a [String], search_term: &str) -> Option<&'a String> {
-    keyboards.iter().find(|k| k.contains(&search_term))
+fn last_language(languages: &[String]) -> &str {
+    languages.last().unwrap()
 }
 
 fn main() {
     let languages = vec![String::from("rust"), String::from("go"), String::from("typescript")];
 
     let result = next_language(&languages, "go");
-    println!("{}", result);
+    println!("Found language: {}", result);
 
-    let keyboards = vec![
-        String::from("Yamaha"),
-        String::from("Roland"),
-        String::from("Casio"),
-        String::from("Moog")
-    ];
-
-    match find_keyboard(&keyboards, "Ya") {
-        Some(keyboard) => println!("Keyboard found: {}", keyboard),
-        None => println!("No keyboard found"),
-    }
+    let last_lang = last_language(&languages);
+    println!("Last language: {}", last_lang);
 }
